@@ -1,12 +1,16 @@
 //adding current date to jumbo
-var now = moment().format("LLLL"); 
+var now = moment().format("dddd, MMMM, Do YYYY"); 
 $("#currentDay").text(now);
+
+//clear local storage
+// var reset = localStorage.clear();
 
 //save buttons function
 $(".saveBtn").on("click", function () {
   var saveTask = $(this).siblings("textarea").val();
   var taskID = $(this).siblings("textarea").attr("id");
   console.log(saveTask, taskID);
+  $(this).addClass("saveBtnSelected");
   localStorage.setItem(taskID, saveTask);
 });
 
@@ -21,5 +25,6 @@ $("#hour3").val(localStorage.getItem("hour3"));
 $("#hour4").val(localStorage.getItem("hour4"));
 $("#hour5").val(localStorage.getItem("hour5"));
 
-//clear local storage
-// var reset = localStorage.clear();
+
+
+

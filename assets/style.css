@@ -63,10 +63,18 @@ textarea{
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
+  opacity: 50%;
   color: white;
 }
 
 .saveBtn:hover {
   font-size: 20px;
-  background-color: darkslateblue;
+  background-color: #06AED5;
+  opacity: 100%;
+}
+
+.saveBtnSelected {
+  font-size: 20px;
+  background-color:#06AED5;
+  opacity: 100%;
 }
