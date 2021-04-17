@@ -26,20 +26,21 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"> Today is </p>
+      <p id="currentDay" class="lead"> text </p>
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
       <div class="row">
-        <div class="col-2  hour time-block">Time</div>
-        <div class="col-8 future">Task</div>
-        <div class="col-2 saveBtn">
-          <img src="./assets/images/icons8-save-50 (1).png" class="img-fluid" alt="Save Button"></div>
+        <div class="col-2  hour time-block">9:00am</div>
+        <textarea id="hour9" class="col-8 future">Enter Task</textarea>
+        <button class="col-2 saveBtn">
+          <img src="./assets/images/icons8-save-50 (1).png" class="img-fluid" alt="Save Button">
+        </button>
       </div>
     </div>
 
-    <script src="./assets/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
