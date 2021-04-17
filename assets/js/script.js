@@ -1,8 +1,8 @@
 //adding current date to jumbo
-var now = dayjs();
+var now = moment().format("LLLL"); 
 $("#currentDay").text(now);
 
-//save button functions
+//save buttons function
 $(".saveBtn").on("click", function () {
   var saveTask = $(this).siblings("textarea").val();
   var taskID = $(this).siblings("textarea").attr("id");
