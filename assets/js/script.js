@@ -1,5 +1,13 @@
-//Global Task variables
-
+//Global9 Task variables
+var hour9 = document.querySelector("#h9").innerText;
+var hour10 = document.querySelector("#h10").innerText;
+var hour11 = document.querySelector("#h11").innerText;
+var hour12 = document.querySelector("#h12").innerText;
+var hour13 = document.querySelector("#h13").innerText;
+var hour14 = document.querySelector("#h14").innerText;
+var hour15 = document.querySelector("#h15").innerText;
+var hour16 = document.querySelector("#h16").innerText;
+var hour17 = document.querySelector("#h17").innerText;
 
 //adding current date to jumbo
 var now = moment().format("LLLL");
@@ -18,11 +26,12 @@ var compareTime = function (taskTime) {
   }
   var currentHour = moment().hours();
   console.log(currentHour, momentTime);
+
+  if (momentTime < currentHour) {
+    console.log("make it Green");
+  }
 };
-compareTime("hour1");
-
-
-
+compareTime(hour9);
 
 //save buttons function
 $(".saveBtn").on("click", function () {
@@ -43,4 +52,3 @@ $("#task6").val(localStorage.getItem("task6"));
 $("#task7").val(localStorage.getItem("task7"));
 $("#task8").val(localStorage.getItem("task8"));
 $("#task9").val(localStorage.getItem("task9"));
-
