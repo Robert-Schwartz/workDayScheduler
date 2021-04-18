@@ -19,19 +19,26 @@ $("#currentDay").text(now);
 //Compare - Task Time vs Current Time
 var compareTime = function (taskTime) {
   var momentTime = taskTime.slice(-2);
-  if (momentTime === "am") {
-    momentTime = parseInt(taskTime[0]);
-  } else {
-    momentTime = parseInt(taskTime[0]) + 12;
-  }
-  var currentHour = moment().hours();
-  console.log(currentHour, momentTime);
+     if (momentTime === "am") {
+            momentTime = parseInt(taskTime[0]);
+        } else {
+            momentTime = parseInt(taskTime[0]) + 12;
+        }
+        var currentHour = moment().hours();
+        console.log(momentTime,currentHour);
 
-  if (momentTime < currentHour) {
-    console.log("make it Green");
-  }
-};
-compareTime(hour9);
+    if (momentTime < currentHour) {
+        console.log("This is in the past, Make it Red");
+        } else if 
+            (momentTime === currentHour) {
+                console.log("This is in current, Make it Gray"); 
+        } else {
+            console.log("this is in the future, Make it Green!")
+        }
+            
+ } 
+        ;
+compareTime(hour16);
 
 //save buttons function
 $(".saveBtn").on("click", function () {
