@@ -1,4 +1,6 @@
 //adding current date to jumbo
+var taskHour = $("hour");
+console.log(taskHour);
 var now = moment().format("LLLL");
 $("#currentDay").text(now);
 
@@ -17,9 +19,6 @@ var compareTime = function (taskTime) {
   console.log(currentHour, momentTime);
 };
 compareTime("9:00am");
-
-
-
 
 //save buttons function
 $(".saveBtn").on("click", function () {
