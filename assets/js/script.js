@@ -1,6 +1,7 @@
+//Global Task variables
+
+
 //adding current date to jumbo
-var taskHour = $("hour");
-console.log(taskHour);
 var now = moment().format("LLLL");
 $("#currentDay").text(now);
 
@@ -18,24 +19,28 @@ var compareTime = function (taskTime) {
   var currentHour = moment().hours();
   console.log(currentHour, momentTime);
 };
-compareTime("9:00am");
+compareTime("hour1");
+
+
+
 
 //save buttons function
 $(".saveBtn").on("click", function () {
   var saveTask = $(this).siblings("textarea").val();
   var taskID = $(this).siblings("textarea").attr("id");
-  console.log(saveTask, taskID);
   $(this).addClass("saveBtnSelected");
   localStorage.setItem(taskID, saveTask);
+  console.log(localStorage);
 });
 
-//show saved values
-$("#hour9").val(localStorage.getItem("hour9"));
-$("#hour10").val(localStorage.getItem("hour10"));
-$("#hour11").val(localStorage.getItem("hour11"));
-$("#hour12").val(localStorage.getItem("hour12"));
-$("#hour1").val(localStorage.getItem("hour1"));
-$("#hour2").val(localStorage.getItem("hour2"));
-$("#hour3").val(localStorage.getItem("hour3"));
-$("#hour4").val(localStorage.getItem("hour4"));
-$("#hour5").val(localStorage.getItem("hour5"));
+//show persistance values in each task from local storage
+$("#task1").val(localStorage.getItem("task1"));
+$("#task2").val(localStorage.getItem("task2"));
+$("#task3").val(localStorage.getItem("task3"));
+$("#task4").val(localStorage.getItem("task4"));
+$("#task5").val(localStorage.getItem("task5"));
+$("#task6").val(localStorage.getItem("task6"));
+$("#task7").val(localStorage.getItem("task7"));
+$("#task8").val(localStorage.getItem("task8"));
+$("#task9").val(localStorage.getItem("task9"));
+
