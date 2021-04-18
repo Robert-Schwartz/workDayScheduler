@@ -3,17 +3,21 @@ var now = moment().format("LLLL");
 $("#currentDay").text(now);
 
 //clear local storage
-// var reset = localStorage.clear();
+// localStorage.clear();
 
-var compareTime = function(textTime) {
-textTime = textTime + 7;
-var parseTime = "1970-01-01 "+textTime+":00Z";
-var momentTime = moment(parseTime);
-console.log(momentTime.format("H"));
-console.log(momentTime);
-//
+//Compare - Task Time vs Current Time
+var compareTime = function (taskTime) {
+  var momentTime = taskTime.slice(-2);
+  if (momentTime === "am") {
+    momentTime = parseInt(taskTime[0]);
+  } else {
+    momentTime = parseInt(taskTime[0]) + 12;
+  }
+  var currentHour = moment().hours();
+  console.log(currentHour, momentTime);
 };
-compareTime(09);
+compareTime("9:00am");
+
 
 
 
