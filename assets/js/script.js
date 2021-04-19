@@ -1,4 +1,4 @@
-//Global9 Task variables
+//Global9 Task Time variables
 var hour9 = document.querySelector("#h9").innerText;
 var hour10 = document.querySelector("#h10").innerText;
 var hour11 = document.querySelector("#h11").innerText;
@@ -13,32 +13,26 @@ var hour17 = document.querySelector("#h17").innerText;
 var now = moment().format("LLLL");
 $("#currentDay").text(now);
 
-//clear local storage
-// localStorage.clear();
-
 //Compare - Task Time vs Current Time
 var compareTime = function (taskTime) {
   var momentTime = taskTime.slice(-2);
-     if (momentTime === "am") {
-            momentTime = parseInt(taskTime[0]);
-        } else {
-            momentTime = parseInt(taskTime[0]) + 12;
-        }
-        var currentHour = moment().hours();
-        console.log(momentTime,currentHour);
+  if (momentTime === "am") {
+    momentTime = parseInt(taskTime[0]);
+  } else {
+    momentTime = parseInt(taskTime[0]) + 12;
+  }
+  var currentHour = moment().hours();
+  console.log(momentTime, currentHour);
 
-    if (momentTime < currentHour) {
-        console.log("This is in the past, Make it Red");
-        } else if 
-            (momentTime === currentHour) {
-                console.log("This is in current, Make it Gray"); 
-        } else {
-            console.log("this is in the future, Make it Green!")
-        }
-            
- } 
-        ;
-compareTime(hour16);
+  if (momentTime < currentHour) {
+    console.log("This is in the past, Make it Red");
+  } else if (momentTime === currentHour) {
+    console.log("This is in current, Make it Gray");
+  } else {
+    console.log("this is in the future, Make it Green!");
+  }
+};
+compareTime(hour10);
 
 //save buttons function
 $(".saveBtn").on("click", function () {
@@ -46,7 +40,6 @@ $(".saveBtn").on("click", function () {
   var taskID = $(this).siblings("textarea").attr("id");
   $(this).addClass("saveBtnSelected");
   localStorage.setItem(taskID, saveTask);
-  console.log(localStorage);
 });
 
 //show persistance values in each task from local storage
@@ -59,3 +52,6 @@ $("#task6").val(localStorage.getItem("task6"));
 $("#task7").val(localStorage.getItem("task7"));
 $("#task8").val(localStorage.getItem("task8"));
 $("#task9").val(localStorage.getItem("task9"));
+
+//clear local storage
+// localStorage.clear();
